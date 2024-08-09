@@ -2,8 +2,11 @@ from dataloader import get_dataloader
 
 if __name__ == "__main__":
 
-    datapath = "data/massachusetts_split"
+    datapath = "data/massachusetts_object_detection"
 
-    train_loader = get_dataloader(datapath, "train")
-    val_loader = get_dataloader(datapath, "val")
-    test_loader = get_dataloader(datapath, "test")
+    test_loader = get_dataloader(datapath, "val")
+    
+    for i, (image, bounding_boxes) in enumerate(test_loader):
+        print(image.shape)
+        print(bounding_boxes)
+        break
